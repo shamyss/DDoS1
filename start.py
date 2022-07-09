@@ -5293,7 +5293,7 @@ def handleProxyList(con, proxy_li, proxy_ty, url=None):
         exit("Socks Type Not Found [4, 5, 1, 0, 6]")
     if proxy_ty == 6:
         proxy_ty = randchoice([4, 5, 1])
-    if proxy_li.exists():
+    if not proxy_li.exists():
         logger.warning(
             f"{bcolors.WARNING}The file doesn't exist, creating files and downloading proxies.{bcolors.RESET}")
         proxy_li.parent.mkdir(parents=True, exist_ok=True)
