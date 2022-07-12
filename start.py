@@ -4992,6 +4992,19 @@ class HttpFlood(Thread):
             self.SENT_FLOOD = self.COOKIES
         if name == "TOR":
             self.SENT_FLOOD = self.TOR
+            self.SENT_FLOOD = self.KILLER	
+            self.SENT_FLOOD = self.GET
+            self.SENT_FLOOD = self.POST
+            self.SENT_FLOOD = self.BOT
+            self.SENT_FLOOD = self.SLOW
+            self.SENT_FLOOD = self.STRESS
+            self.SENT_FLOOD = self.DYN
+            self.SENT_FLOOD = self.SLOW
+            self.SENT_FLOOD = self.GSB
+            self.SENT_FLOOD = self.RHEX
+            self.SENT_FLOOD = self.STOMP
+            self.SENT_FLOOD = self.NULL
+            self.SENT_FLOOD = self.COOKIES
         if name == "PPS":
             self.SENT_FLOOD = self.PPS
             self._defaultpayload = (
