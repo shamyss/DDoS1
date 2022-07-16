@@ -98,7 +98,7 @@ python3 start.py tools
 **Clone and Install Script**
 
 ```
-git clone https://github.com/TheShadowDDoS/TheShadowDDoS.git;cd TheShadowDDoS;git clone https://github.com/MatrixTM/PyRoxy.git;sudo apt install python3;sudo apt install python3-pip;sudo pip3 install -r requirements.txt;sudo pip3 install PyRoxy ;sudo pip3 install --upgrade pip; sudo pip3 install PyRoxy; sudo pip3 install -r requirements.txt
+git clone https://github.com/TheShadowDDoS/TheShadowDDoS.git;cd TheShadowDDoS;git clone https://github.com/MatrixTM/PyRoxy.git; apt install python3; apt install python3-pip; pip3 install -r requirements.txt; pip3 install PyRoxy ; pip3 install --upgrade pip;  pip3 install PyRoxy;  pip3 install -r requirements.txt
 ```
 
 [python3]: https://python.org 'Python3'
