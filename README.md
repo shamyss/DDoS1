@@ -98,12 +98,12 @@ python3 start.py tools
 **Clone and Install Script**
 
 ```shell script
-git clone https://github.com/MatrixTM/MHDDoS.git
-cd MHDDoS
+git clone https://github.com/TheShadowDDoS/TheShadowDDoS.git
+cd TheShadowDDoS
 pip install -r requirements.txt
 ```
 
 [python3]: https://python.org 'Python3'
-[github]: https://github.com/MatrixTM/MHDDoS/issues 'GitHub'
+[github]: https://github.com/TheShadowDDoS/TheShadowDDoS.git 'GitHub'
 
 ---
